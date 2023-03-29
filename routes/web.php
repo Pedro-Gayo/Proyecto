@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('/rutas',[RutasController::class,'mostrar'])->name('rutas');
 
+Route::post('/rutas',[RutasController::class,'añadir'])->name('añadir');
+
 Route::get('/filtrado',[RutasController::class,'filtrado'])->name('filtrar');
 
 Route::get('/voluntarios', function () {
