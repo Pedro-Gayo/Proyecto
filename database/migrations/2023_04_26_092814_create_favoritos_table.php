@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rutas_voluntarios', function (Blueprint $table) {
+        Schema::create('favoritos', function (Blueprint $table) {
             $table->unsignedBigInteger('ruta_id');
-            $table->unsignedBigInteger('voluntario_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('ruta_id')->references('id')->on('rutas')->onDelete('cascade');
-            $table->foreign('voluntario_id')->references('id')->on('users')->onDelete('cascade');
-            $table->primary(['ruta_id', 'voluntario_id']);
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->primary(['ruta_id', 'user_id']);
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rutas_voluntarios');
+        Schema::dropIfExists('favoritos');
     }
 };

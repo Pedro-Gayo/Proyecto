@@ -11,6 +11,6 @@ class Rutas extends Model
 
     public function voluntarios()
     {
-        return $this->belongsToMany(Monitores::class, 'ruta_voluntarios', 'ruta_id', 'voluntario_id');
+        return $this->belongsToMany(User::class, 'ruta_voluntarios', 'ruta_id', 'voluntario_id');
     }
 }

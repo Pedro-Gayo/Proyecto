@@ -19,7 +19,6 @@ class RutasFactory extends Factory
         return [
             'nombre' => fake()->name(),
             'dificultad' => fake()->numberBetween(0,10),
-            'estado' => fake()->randomLetter(),
             'deporte' => 'bici', // password
             'imagen' => fake()->sentence(),
             'municipio' => fake()->state(),

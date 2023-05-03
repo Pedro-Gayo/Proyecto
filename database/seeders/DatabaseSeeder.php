@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
          \App\Models\Rutas::factory(10)->create();
-         \App\Models\User::factory(10)->create();
+        //  \App\Models\User::factory(10)->create();
 
-         $this->call(VoluntarioSeeder::class);
+        //  $this->call(VoluntarioSeeder::class);
 
 
         // \App\Models\User::factory()->create([

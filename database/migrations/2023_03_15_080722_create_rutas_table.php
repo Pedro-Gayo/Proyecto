@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('dificultad');
-            $table->string('estado');
             $table->string('deporte');
             $table->string('imagen');
             $table->string('municipio');

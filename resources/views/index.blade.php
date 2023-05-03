@@ -8,7 +8,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 </head>
 
@@ -30,23 +30,51 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('nosotros')}}">SOBRE NOSOTROS</a>
                     </li>
-                    <li class="mx-3 float-end">
-                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" 
-                        xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" 
-                        width="40" height="40" x="0" y="0" viewBox="0 0 24 24" 
-                        style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
-                        <g transform="matrix(0.9799999999999999,0,0,0.9799999999999999,0.2400000000000002,
-                        0.2400000000000002)"><path d="M19 0H5a5.006 5.006 0 0 0-5 5v14a5.006 5.006 0 0 0 5 
-                        5h14a5.006 5.006 0 0 0 5-5V5a5.006 5.006 0 0 0-5-5ZM7 22v-1a5 5 0 0 1 10 0v1Zm15-3a3 
-                        3 0 0 1-3 3v-1a7 7 0 0 0-14 0v1a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3Z" 
-                        fill="#1c7710" data-original="#000000" class=""></path>
-                        <path d="M12 4a4 4 0 1 0 4 4 4 4 0 0 0-4-4Zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2Z" 
-                        fill="#1c7710" data-original="#000000" class=""></path></g></svg>
-                    </li>
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('favoritos')}}">RUTAS FAVORITAS</a>
+                        </li>
+                    @endauth
                 </ul>
+                <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
             </div>
         </div>
     </nav>
+
+
     <div class="container">
         @yield('content')
     </div>
@@ -67,6 +95,7 @@
             </div>
         </div>
     </footer>
+    @yield('scripts')
 </body>
 
 </html>
