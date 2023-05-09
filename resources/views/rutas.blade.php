@@ -23,7 +23,7 @@
                 <li>{{$ruta->nombre}}</li>
                 <li>{{$ruta->dificultad}}</li>
                 <li>{{$ruta->deporte}}</li>
-                <li>{{$ruta->imagen}}</li>
+                <img src="{{ $ruta->imagen }}" alt="Imagen de la ruta">
                 <li>{{$ruta->municipio}}</li>
                 <li>
                     @if($ruta->nota != null)
@@ -77,7 +77,7 @@
 @auth
 <div class="row">
     <div class="col">
-        <form action="{{route('añadir')}}" method="post">
+        <form action="{{route('añadir')}}" method="post" enctype="multipart/form-data">
             @csrf
             <p>Añadir ruta</p>
             <label for="nombre">Nombre:</label>
@@ -92,8 +92,8 @@
                 <option value="bici">bici</option>
                 <option value="andar">senderismo</option>
             </select>
-            <label for="imagen">imagen:</label>
-            <input type="text" name="imagen" id="imagen">
+            <label for="imagen">Imagen de la ruta:</label>
+            <input type="file" name="imagen" id="imagen">
 
             <input type="submit" value="Añadir">
         </form>

@@ -54,11 +54,7 @@
     <h2>Programa de voluntarios</h2>
     <p>lore ipsum</p>
 </section>
-<script>
-    var myCarousel = document.querySelector('#videoCarousel')
-    var carousel = new bootstrap.Carousel(myCarousel, {
-      interval: 5000, // cambiar de video cada 5 segundos
-      wrap: true
-    })
-  </script>
+@endsection
+
+@section('scripts')
 @endsection
