@@ -1,0 +1,12 @@
+.btn-delete {
+    background-color: rgb(209, 24, 24); /* color de fondo del botón */
+    color: white; /* color del texto del botón */
+    border-radius: 20px; /* redondeo de las esquinas del botón */
+    border: none; /* eliminamos cualquier borde predefinido */
+}
+
+/* Estilos al pasar el mouse sobre el botón */
+.btn-delete:hover {
+    background-color: darkred; /* oscurecemos un poco el color de fondo al pasar el mouse */
+    cursor: pointer; /* cambiamos el cursor a una mano al pasar el mouse */
+}

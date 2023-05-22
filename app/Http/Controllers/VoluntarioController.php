@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Favoritos;
 use App\Models\RutasVoluntarios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -75,5 +76,17 @@ class VoluntarioController extends Controller
             ->get();
 
         return view('voluntarios', ['misRutas' => $rutas]);
+    }
+
+    public function añadirFavorito($id)
+    {
+        $voluntario = new Favoritos();
+
+        $voluntario->ruta_id = $id;
+        $voluntario->user_id = auth()->id();
+
+        $voluntario->save();
+
+        return redirect()->route('voluntarios');
     }
 }

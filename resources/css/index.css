@@ -1,0 +1,85 @@
+body {
+    background-attachment: fixed;
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 7, 34, 0.5),
+        rgba(0, 7, 34, 0.5)
+      ),
+      url("https://cdn.discordapp.com/attachments/1085486925714042903/1088040361106096208/pexels-trace-hudson-2724664.jpg");
+  }
+
+  .navbar-asturcross {
+    background-color: #1d3557;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-asturcross .navbar-brand,
+  .navbar-asturcross .navbar-nav .nav-link {
+    color: #f1faee;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  .navbar-asturcross .navbar-brand:hover,
+  .navbar-asturcross .navbar-brand:focus,
+  .navbar-asturcross .navbar-nav .nav-link:hover,
+  .navbar-asturcross .navbar-nav .nav-link:focus {
+    color: #ffe600;
+  }
+
+  .navbar-asturcross .navbar-nav .dropdown-menu {
+    background-color: #1d3557;
+  }
+
+  .navbar-asturcross .navbar-nav .dropdown-item {
+    color: #f1faee;
+  }
+
+  .navbar-asturcross .navbar-nav .dropdown-item:hover,
+  .navbar-asturcross .navbar-nav .dropdown-item:focus {
+    color: #e63946;
+    background-color: transparent;
+  }
+
+  footer {
+    background-color: #1d3557;
+    padding: 2rem 0;
+    color: #f1faee;
+    text-align: center;
+  }
+
+  footer p {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  footer .list-group {
+    display: inline-block;
+    text-align: center;
+  }
+
+  footer .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 0.25rem 1rem;
+    color: #f1faee;
+    font-weight: 600;
+    display: inline;
+  }
+
+  footer .list-group-item img {
+    width: 32px;
+    transition: transform 0.3s;
+  }
+
+  footer .list-group-item:hover img {
+    transform: scale(1.5);
+    cursor: pointer;
+  }
+
+  footer .copyright {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 1rem;
+  }

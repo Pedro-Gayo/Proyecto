@@ -45,11 +45,13 @@ Route::delete('/voluntarios/{ruta_id}/{voluntario_id}',[VoluntarioController::cl
 
 Route::get('/filtradoV',[VoluntarioController::class,'filtrado'])->name('filtrarV');
 
+Route::post('/favoritoV/{ruta}', [VoluntarioController::class,'añadirFavorito'])->name('addf');
+
 
 //favoritos
 Route::get('/favoritos',[FavoritosController::class,'mostrar'])->name('favoritos');
 
-Route::delete('/favoritos/{ruta_id}',[FavoritosController::class,'borrar'])->name('borrar');
+Route::delete('/favoritos/{ruta_id}/{user_id}',[FavoritosController::class,'borrar'])->name('borrarF');
 
 
 Route::get('/nosotros', function () {

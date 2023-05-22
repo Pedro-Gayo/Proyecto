@@ -1,0 +1,153 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.search-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #1d3557;
+    color: white;
+}
+
+.search-form label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.search-form input[type="submit"] {
+    background-color: #0066FF;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-form input[type="submit"]:hover {
+    background-color: #0066FF;
+}
+
+.ruta-info {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ruta-info li {
+    margin-bottom: 5px;
+  }
+  
+  .ruta-imagen {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .ruta-botones {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  .ruta-botones input[type="submit"] {
+    background-color: #0066FF;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .ruta-botones input[type="submit"]:hover {
+    background-color: #0066FF;
+  }
+  
+  .card {
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: #1d3557;
+    color: white;
+  }
+  
+  .valoracion-container {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+  .custom-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.custom-col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.custom-col form {
+    background-color: #1d3557;
+    color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-col form label,
+.custom-col form p {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.custom-col form input[type="text"],
+.custom-col form select,
+.custom-col form input[type="file"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.custom-col form input[type="submit"] {
+    background-color: #0066FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.custom-col form input[type="submit"]:hover {
+    background-color: #0066FF;
+}
+
+.custom-col iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+
+@media (max-width: 577px) {
+  .col {
+      flex: unset; 
+  }
+}

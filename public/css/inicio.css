@@ -1,0 +1,308 @@
+.portada {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50vh; /* Cambia el tamaño de la sección de portada */
+    display: flex;
+  }
+
+  .portada-videos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .portada-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    display: none;
+  }
+
+  .portada-video:first-child {
+    display: block;
+  }
+
+  .portada-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7) 
+    );
+    z-index: 1;
+    }
+  
+    @media (min-width: 1024px) {
+      .portada-overlay {
+        width: 40%;
+      }
+    }
+
+    .portada-texto {
+      font-family: "Segoe Script", cursive;
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+
+  .astur {
+    color: #0066FF; /* Puedes ajustar el color azul según el tono exacto de la bandera de Asturias */
+  }
+
+  .cross {
+    color: #F7D417; /* Puedes ajustar el color amarillo según el tono exacto de la bandera de Asturias */
+  }
+
+  .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .video-slider {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    height: 50vh; /* Cambia el tamaño del carrusel de vídeos */
+    margin-left: auto; /* Centra el carrusel horizontalmente */
+    margin-right: auto; /* Centra el carrusel horizontalmente */
+  }
+
+  .video-slide {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: left 0.5s;
+  }
+  .video-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Añade bordes redondeados a los vídeos */
+  }
+
+  .video-slide h5 {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .video-slide.active {
+    left: 0;
+  }
+
+  .slider-controls {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+  }
+
+  .slider-controls button {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  #contenedor {
+    width: 80%;
+
+    margin-left: auto; /* Centra el carrusel horizontalmente */
+    margin-right: auto; /* Centra el carrusel horizontalmente */
+  }
+
+  #presentacion {
+    margin-top: auto; /* Centra el carrusel horizontalmente */
+    margin-bottom: auto; /* Centra el carrusel horizontalmente */
+    color: #fff;
+  }
+
+
+  #conocenos {
+    width: 100%;
+    height: 60vh;
+    margin-left: auto; /* Centra el carrusel horizontalmente */
+    margin-right: auto; /* Centra el carrusel horizontalmente */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    #conocenos {
+        height: auto; /* altura para pantallas menores a 600px */
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+  }
+
+
+  #oferta {
+    padding: 2rem;
+    align-items: center;
+  }
+
+  #oferta .row {
+    justify-content: center;
+  }
+
+  @media (max-width: 577px) {
+
+    #oferta .row {
+      align-items: center;
+      display: block;
+    }
+  }
+
+  @media (min-width: 1050px) {
+    #oferta .row {
+      flex-wrap: nowrap;
+      }
+  }
+
+
+  #oferta .col {
+    transition: transform 0.3s, background 0.3s;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden; /* Asegura que el texto no se muestre fuera del contenedor */
+    height: 30vh;
+  }
+
+  #oferta .col h3,
+  #oferta .col p {
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s;
+  }
+
+  #oferta .col h3 {
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  #oferta .col p {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  #bici {
+    background-image: url("https://cdn.discordapp.com/attachments/1085486925714042903/1105099368715014254/pexels-pixabay-163491.jpg");
+  }
+
+  #senderismo {
+    background-image: url("https://cdn.discordapp.com/attachments/1085486925714042903/1105092869712261181/pexels-andrei-tanase-1271619.jpg");
+  }
+
+  #moto {
+    background-image: url("https://cdn.discordapp.com/attachments/1085486925714042903/1105099699502981142/pexels-adam-freden-3036240.jpg");
+  }
+
+  #buddy {
+    background-image: url("https://cdn.discordapp.com/attachments/1085486925714042903/1105099982345875546/pexels-abdelkarim-achtaou-4480898.jpg");
+  }
+
+  #oferta .col:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    );
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  #oferta .col:hover {
+    transform: scale(1.1);
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #oferta .col:hover:before {
+    opacity: 1;
+  }
+
+  #oferta .col:hover h3,
+  #oferta .col:hover p {
+    color: white;
+    opacity: 1;
+  }
+
+  #titulo {
+    text-align: center;
+    color: #fff;
+  }
+
+  #novedad {
+    position: relative;
+    padding: 4rem;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url("https://cdn.discordapp.com/attachments/1085486925714042903/1105085252239626250/pexels-eric-sanman-1365425.jpg"); /* Reemplazar 'imagen-de-fondo.jpg' con la ruta a tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+  }
+
+  #novedad h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  #novedad p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
