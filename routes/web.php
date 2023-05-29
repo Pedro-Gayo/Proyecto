@@ -26,7 +26,7 @@ Route::get('/rutas',[RutasController::class,'mostrar'])->name('rutas');
 
 Route::post('/rutas',[RutasController::class,'añadir'])->name('añadir');
 
-Route::delete('/rutas/{id}',[RutasController::class,'borrar'])->name('borrar');
+Route::delete('/rutas/{id}',[RutasController::class,'borrar'])->name('borrarR');
 
 Route::get('/filtrado',[RutasController::class,'filtrado'])->name('filtrar');
 

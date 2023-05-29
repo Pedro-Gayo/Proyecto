@@ -8,6 +8,7 @@ use App\Models\Rutas;
 use App\Models\RutasVoluntarios;
 use Illuminate\Http\Request;
 use Aws\S3\S3Client;
+use Aws\S3\Exception\S3Exception;
 
 class RutasController extends Controller
 {
@@ -95,31 +96,41 @@ class RutasController extends Controller
   }
 
 
-  //borrar rutas
-  public function borrar($id)
-  {
+  
 
-    $ruta = Rutas::find($id);
-    $ruta->delete();
+// borrar rutas
+public function borrar($id)
+{
+  $ruta = Rutas::find($id);
 
-    $s3 = new S3Client([
-      'version' => 'latest',
-      'region' => env('AWS_DEFAULT_REGION'),
-      'credentials' => [
-        'key' => env('AWS_ACCESS_KEY_ID'),
-        'secret' => env('AWS_SECRET_ACCESS_KEY')
-      ]
-    ]);
+  $s3 = new S3Client([
+    'version' => 'latest',
+    'region' => env('AWS_DEFAULT_REGION'),
+    'credentials' => [
+      'key' => env('AWS_ACCESS_KEY_ID'),
+      'secret' => env('AWS_SECRET_ACCESS_KEY')
+    ]
+  ]);
 
-    $rutaArchivo = 'imagenes/' . $ruta->imagen;
+  $rutaCompleta = parse_url($ruta->imagen, PHP_URL_PATH);
+  $rutaArchivo = ltrim($rutaCompleta, '/');
 
+  try {
     $s3->deleteObject([
       'Bucket' => env('AWS_BUCKET'),
       'Key' => $rutaArchivo
     ]);
-
-    return redirect()->route('rutas');
+  } catch (S3Exception $e) {
+    echo "Hubo un error al intentar eliminar el archivo.\n";
+    echo $e->getMessage();
+    // Aquí puedes decidir si redirigir al usuario a una página de error o manejarlo de otra manera.
   }
+
+  $ruta->delete();
+
+  return redirect()->route('rutas');
+}
+
 
 
   public function añadirVoluntario($id)

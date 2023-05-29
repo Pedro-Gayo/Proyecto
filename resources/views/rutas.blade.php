@@ -144,7 +144,7 @@
                         @if(auth()->user()->esAdministrador())
                         <!-- Mostrar contenido solo para usuarios autenticados con rol de administrador -->
                         <div>
-                            <form action="{{route('borrar',$ruta->id)}}" method="post">
+                            <form action="{{route('borrarR',$ruta->id)}}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <input type="submit" value="Borrar">
